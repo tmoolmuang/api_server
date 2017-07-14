@@ -1,0 +1,30 @@
+<div>
+  <h3>Aliens</h3>
+  <%= link_to("Add a New Alien", { :action => "new" }) %>
+  <table>
+    <tr>
+      <th>&nbsp;</th>
+      <th>Name</th>
+      <th>Year Found</th>
+      <th>Month Found</th>
+      <th>Origin</th>
+      <th>Power Count</th>
+      <th>&nbsp;</th>
+    </tr>
+    <% @aliens.each do |a| %>
+    <tr>
+      <td><%= a.id %></td>
+      <td><%= a.name %></td>
+      <td><%= a.year %></td>
+      <td><%= a.month %></td>
+      <td><%= a.origin %></td>
+      <td><%= a.powers.count %></td>
+      <td>
+        <%= link_to("Show", { :action => "show", :id => a.id }) %>
+        <%= link_to("Edit",  { :action => "edit", :id => a.id }) %>
+        <%= link_to("Delete", { :action => "delete", :id => a.id }, data: { confirm: 'Are you sure you want to delete this alien?' }) %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

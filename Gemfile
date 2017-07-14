@@ -14,10 +14,14 @@ gem 'faker'
 
 group :development, :test do
   gem 'byebug'
+  gem 'spring'
+  gem 'rspec-rails'
+  gem 'shoulda'
+  gem 'factory_girl_rails'
+  gem 'capybara'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
-  gem 'spring'
 end
 

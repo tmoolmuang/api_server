@@ -1,0 +1,49 @@
+<div>
+  <%= link_to("<< Back to List", { :action => "index" }) %>
+  <div>
+    <h3>Show Alien</h3>
+    <table>
+      <tr>
+        <td>Name</td>
+        <td><%= @alien.name %></td>
+      </tr>
+      <tr>
+        <td>Year</td>
+        <td><%= @alien.year %></td>
+      </tr>
+      <tr>
+        <td>Month</td>
+        <td><%= @alien.month %></td>
+      </tr>
+      <tr>
+        <td>Origin</td>
+        <td><%= @alien.origin %></td>
+      </tr>
+      <tr>
+        <td>
+        <h4>Powers</h4>
+        <%= link_to("Add a New Power", { :controller => "powers", :action => "new", :alien_id => @alien.id }) %>
+        <table>
+          <tr>
+            <th>&nbsp;</th>
+            <th>Ability</th>
+           <th>&nbsp;</th>
+          </tr>
+        </td>
+        <td>
+          <% @alien.powers.each do |p| %>
+          <tr>
+            <td><%= p.id %></td>
+            <td><%= p.ability %></td>
+            <td>
+              <%= link_to("Edit", { :controller => "powers", :action => "edit", :alien_id => @alien.id, :id => p.id }) %>
+              <%= link_to("Delete", { :controller => "powers", :action => "delete", :id => p.id }, data: { confirm: 'Are you sure you want to delete this power?' }) %>
+            </td>
+          </tr>
+          <% end %>
+        </table>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>

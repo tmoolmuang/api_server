@@ -1,0 +1,17 @@
+<div>
+  <%= link_to("<< Back to Alien", { :controller => "aliens", :action => "show", :id => @power.alien.id }) %>
+  <div>
+    <h3>Edit Power for <%= @power.alien.name %></h3>
+    <%= form_for(:power, :url => { :action => "update", :alien_id => @power.alien.id, :id => @power.id }) do |f| %>
+      <table>
+        <tr>
+          <th>Ability</th>
+          <td><%= f.text_field(:ability) %></td>
+        </tr>
+      </table>
+      <div>
+        <%= submit_tag("Update Power") %>
+      </div>
+    <% end %>
+  </div>
+</div>
