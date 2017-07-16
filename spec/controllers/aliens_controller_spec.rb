@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe AliensController, type: :controller do
+  # note to myself
+  # let!(:obj){...} creates immediately and let(:obj){...} will only create obj when the obj is called. 
+  # let is lazily evaluated, that is, obj won't come into existence till something is called upon it. 
   let(:test_alien) { create(:alien) }
   
   context "Alien" do
@@ -45,6 +48,10 @@ RSpec.describe AliensController, type: :controller do
         post :create, alien: { name: test_alien.name, year: test_alien.year, month: test_alien.month, origin: test_alien.origin }
         expect(response).to redirect_to(:action => "index")
       end
+      
+      it "increases the number of alien by 1" do
+        expect{ post :create, alien: {name: "name", year: 1111, month: 11, origin: "origin"} }.to change(Alien, :count).by(1)
+      end
     end
 
     describe "GET edit" do
@@ -65,6 +72,13 @@ RSpec.describe AliensController, type: :controller do
       it "returns http redirect to #index view" do
         delete :delete, { id: test_alien.id }
         expect(response).to redirect_to(:action => "index")
+      end
+      
+      it "decreases the number of alien by 1" do
+        alien_id = test_alien.id
+        delete :delete, { id: alien_id }
+        count = Alien.where({ id:alien_id }).size
+        expect(count).to eq 0
       end
     end
   end
