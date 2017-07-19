@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bootstrap-sass'    
 gem 'faker'         
+gem 'devise'      
 
 group :development, :test do
   gem 'byebug'
@@ -23,4 +24,6 @@ end
 
 group :development do
   gem 'web-console', '~> 2.0'
+  # gem 'letter_opener', '~> 1.4'
+  # gem 'launchy', '~> 2.4', '>= 2.4.3'
 end

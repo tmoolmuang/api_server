@@ -13,3 +13,33 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// body {
+//   background-color: rgb(51, 20, 20);
+//   color: white;
+//   font-family: 'Titillium Web', sans-serif;
+//   font-size: 1.6em;
+// }
+// a {
+//   color: rgb(0, 187, 255);
+// }
+// a:hover {
+//   color: rgb(0, 157, 216);
+// }
+// .form-edit {
+//   color: blue;
+// }
+// .button-save {
+//   color: rgb(51, 20, 20);
+// }
+th, td {
+ text-align: center; 
+ vertical-align: middle;
+ padding: 1px 3px;
+}
+.indent {
+  padding-left: 50px;
+}
+

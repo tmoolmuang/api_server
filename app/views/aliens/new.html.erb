@@ -6,22 +6,22 @@
       <table>
         <tr>
           <th>Name</th>
-          <td><%= f.text_field(:name) %></td>
+          <td class="form-edit"><%= f.text_field(:name) %></td>
         </tr>
         <tr>
           <th>Year</th>
-          <td><%= f.text_field(:year) %></td>
+          <td class="form-edit"><%= f.text_field(:year) %></td>
         </tr>
         <tr>
           <th>Month</th>
-          <td><%= f.text_field(:month) %></td>
+          <td class="form-edit"><%= f.text_field(:month) %></td>
         </tr>
         <tr>
           <th>Origin</th>
-          <td><%= f.text_field(:origin) %></td>
+          <td class="form-edit"><%= f.text_field(:origin) %></td>
         </tr>
       </table>
-      <div>
+      <div class="button-save">
         <%= submit_tag("Create Alien") %>
       </div>
     <% end %>
