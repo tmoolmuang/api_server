@@ -10,7 +10,7 @@ RSpec.describe "Alien", :type => feature do
 
   feature 'View aliens' do        
     scenario 'allows viewing the list of all aliens' do
-      visit "/"
+      visit "/aliens"
       expect(page).to have_content 'Total count: 1'
       expect(page).to have_content test_alien.name
     end
@@ -18,7 +18,7 @@ RSpec.describe "Alien", :type => feature do
 
   feature 'Create an alien' do        
     scenario 'allows creating an alien' do
-      visit "/"
+      visit "/aliens"
       click_on "Add a New Alien"
       fill_in 'alien_name', :with => "New Alien Name"
       fill_in 'alien_year', :with => "9999"
@@ -32,7 +32,7 @@ RSpec.describe "Alien", :type => feature do
   
   feature 'Edit an alien' do        
     scenario 'allows editing an alien' do
-      visit "/"
+      visit "/aliens"
       expect(page).to have_content 'Total count: 1'
       click_on "Edit"
       expect(page).to have_content "Edit Alien"
@@ -44,7 +44,7 @@ RSpec.describe "Alien", :type => feature do
   
   feature 'Delete an Alien' do        
     scenario 'allows deleting an alien' do
-      visit "/"
+      visit "/aliens"
       expect(page).to have_content 'Total count: 1'
       click_on "Delete"
       expect(page).to have_no_content test_alien.name

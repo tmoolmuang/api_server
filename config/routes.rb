@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'aliens#index'
+  root 'aliens#home'
   
   namespace 'api' do
     namespace 'v1' do

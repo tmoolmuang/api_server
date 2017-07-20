@@ -6,7 +6,7 @@ RSpec.describe "Power", :type => feature do
 
   feature 'View powers' do        
     scenario 'allows viewing the list of all powers' do
-      visit "/"
+      visit "/aliens"
       click_on "Show"
       expect(page).to have_content 'Power count: 1'
       expect(page).to have_content test_power.ability
@@ -15,7 +15,7 @@ RSpec.describe "Power", :type => feature do
 
   feature 'Create power' do        
     scenario 'allows creating power' do
-      visit "/"
+      visit "/aliens"
       click_on "Show"
       click_on "Add a New Power"
       fill_in 'power_ability', :with => "New Power"
@@ -27,7 +27,7 @@ RSpec.describe "Power", :type => feature do
   
   feature 'Edit power' do        
     scenario 'allows editing power' do
-      visit "/"
+      visit "/aliens"
       click_on "Show"
       expect(page).to have_content 'Power count: 1'
       click_on "Edit"
@@ -41,7 +41,7 @@ RSpec.describe "Power", :type => feature do
   
   feature 'Delete power' do        
     scenario 'allows deleting power' do
-      visit "/"
+      visit "/aliens"
       click_on "Show"
       expect(page).to have_content 'Power count: 1'
       click_on "Delete"
@@ -50,4 +50,3 @@ RSpec.describe "Power", :type => feature do
     end
   end
 end
-
