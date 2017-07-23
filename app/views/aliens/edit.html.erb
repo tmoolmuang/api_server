@@ -1,8 +1,8 @@
 <div>
-  <%= link_to("<< Back to List", { :action => "index" }) %>
+  <%= link_to("<< Back to List", aliens_path) %>
   <div>
     <h3>Edit Alien</h3>
-    <%= form_for(:alien, :url => { :action => "update", :id => @alien.id }) do |f| %>
+    <%= form_for [@alien] do |f| %>
       <table>
         <tr>
           <th>Name</th>

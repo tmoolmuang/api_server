@@ -1,8 +1,8 @@
 <div>
-  <%= link_to("<< Back to Alien", { :controller => "aliens", :action => "show", :id => @power.alien.id }) %>
+  <%= link_to("<< Back to Alien", alien_path(@power.alien)) %>
   <div>
     <h3>Edit Power for <%= @power.alien.name %></h3>
-    <%= form_for(:power, :url => { :action => "update", :alien_id => @power.alien.id, :id => @power.id }) do |f| %>
+    <%= form_for [@power.alien, @power] do |f| %>
       <table>
         <tr>
           <th>Ability</th>

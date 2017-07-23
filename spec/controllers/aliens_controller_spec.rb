@@ -70,13 +70,13 @@ RSpec.describe AliensController, type: :controller do
 
     describe "DELETE destroy" do
       it "returns http redirect to #index view" do
-        delete :delete, { id: test_alien.id }
+        delete :destroy, { id: test_alien.id }
         expect(response).to redirect_to(:action => "index")
       end
       
       it "decreases the number of alien by 1" do
         alien_id = test_alien.id
-        delete :delete, { id: alien_id }
+        delete :destroy, { id: alien_id }
         count = Alien.where({ id:alien_id }).size
         expect(count).to eq 0
       end

@@ -7,7 +7,9 @@ Rails.application.routes.draw do
       resources :aliens
     end
   end
+  
+  resources :aliens do
+    resources :powers, except: [:index] 
+  end  
 
-  # catch all
-  match ':controller(/:action(/:id))', :via => [:get, :post]
 end

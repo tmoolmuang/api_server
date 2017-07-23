@@ -39,14 +39,14 @@ RSpec.describe PowersController, type: :controller do
 
     describe "DELETE destroy" do
       it "returns http redirect to alien/#show view" do
-        delete :delete, id: test_power.id
-        expect(response).to redirect_to(:controller => 'aliens', :action => "show", :id => test_alien.id)
+        delete :destroy, alien_id: test_alien.id, id: test_power.id
+        expect(response).to redirect_to alien_path(test_alien) #(:controller => 'aliens', :action => "show", :id => test_alien.id)
       end
       
       it "decreases the number of power by 1" do
         power_id = test_power.id
-        delete :delete, { id: power_id }
-        count = Power.where({ id:power_id }).size
+        delete :destroy, alien_id: test_alien.id, id: power_id
+        count = Power.where({ id: power_id }).size
         expect(count).to eq 0
       end
     end

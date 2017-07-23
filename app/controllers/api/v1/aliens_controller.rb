@@ -1,7 +1,8 @@
 module Api
   module V1
     class AliensController < ApplicationController
-      skip_before_action :verify_authenticity_token #TODO: work on authentication
+      protect_from_forgery with: :null_session
+      before_filter :verify_token
       
       def index
         aliens = Alien.all
@@ -42,6 +43,13 @@ module Api
       def alien_params
         params.require(:alien).permit(:name, :year, :month, :origin)
       end
+      
+      def verify_token
+        authenticate_or_request_with_http_token do |token, options|
+          User.find_by_api_token(token).present?
+        end
+      end
+      
     end
   end
 end

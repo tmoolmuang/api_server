@@ -14,7 +14,7 @@ class AliensController < ApplicationController
   def create
     @alien = Alien.new(alien_params)
     if @alien.save
-      redirect_to(:action => "index")
+      redirect_to aliens_path
     else
       render "new"
     end
@@ -27,15 +27,15 @@ class AliensController < ApplicationController
   def update
     @alien = Alien.find(params[:id])
     if @alien.update_attributes(alien_params)
-      redirect_to(:action => "show", :id => @alien.id)
+      redirect_to alien_path(@alien.id)
     else
       render "edit"
     end
   end
 
-  def delete
+  def destroy
     @alien = Alien.find(params[:id]).destroy
-    redirect_to(:action => "index")
+    redirect_to aliens_path
   end
 
   private
