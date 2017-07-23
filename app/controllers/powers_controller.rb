@@ -34,5 +34,4 @@ class PowersController < ApplicationController
   def power_params
     params.require(:power).permit(:ability)
   end
-
 end

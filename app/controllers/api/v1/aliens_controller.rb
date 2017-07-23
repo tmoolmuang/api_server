@@ -16,11 +16,10 @@ module Api
 
       def create
         alien = Alien.new(alien_params)
-
         if alien.save
-          render json: { status: 'SUCCESS', message: 'Alien saved', data: alien }, status: :ok
+          render json: { status: 'SUCCESS', message: 'Alien created', data: alien }, status: :ok
         else
-          render json: { status: 'ERROR', message: 'Alien not saved', data: alien.errors }, status: :unprocessable_entity
+          render json: { status: 'ERROR', message: 'Alien not created', data: alien.errors }, status: :unprocessable_entity
         end
       end
 
@@ -49,7 +48,6 @@ module Api
           User.find_by_api_token(token).present?
         end
       end
-      
     end
   end
 end
