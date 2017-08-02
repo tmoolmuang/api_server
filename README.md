@@ -11,41 +11,41 @@ https://api-tm.herokuapp.com/
 
 # API Document
 #### Show All Aliens 
-**GET**  `https://api-tmoolmuang.c9users.io/api/v1/aliens` <br>
+**GET**  `https://api-tm.herokuapp.com/api/v1/aliens` <br>
 **header:**  `{ Key: Authorization, Value: Token token=api_token }` <br><br>
 #### Show an Alien
-**GET**  `https://api-tmoolmuang.c9users.io/api/v1/aliens/id` <br>
+**GET**  `https://api-tm.herokuapp.com/api/v1/aliens/id` <br>
 **header:**  `{ Key: Authorization, Value: Token token=api_token }` <br><br>
 #### Create a new Alien
-**POST**  `https://api-tmoolmuang.c9users.io/api/v1/aliens` <br>
+**POST**  `https://api-tm.herokuapp.com/api/v1/aliens` <br>
 **header:**  `{ Key: Authorization, Value: Token token=api_token
   Key: Content-Type, Value: application/json  }` <br>
 **body:**  `{ "name": "Spiderman", "year": 2001, "month": 2, "origin": "earth" }`<br><br>
 #### Update an existing Alien
-**PUT**  `https://api-tmoolmuang.c9users.io/api/v1/aliens/id` <br>
+**PUT**  `https://api-tm.herokuapp.com/api/v1/aliens/id` <br>
 **header:**  `{ Key: Authorization, Value: Token token=api_token
   Key: Content-Type, Value: application/json  }` <br>
 **body:**  `{ "origin": "mars" }`<br><br>
 #### Delete an Alien
-**DELETE**  `https://api-tmoolmuang.c9users.io/api/v1/aliens/id` <br>
+**DELETE**  `https://api-tm.herokuapp.com/api/v1/aliens/id` <br>
 **header:**  `{ Key: Authorization, Value: Token token=api_token }` <br><br>
 ********
 #### Show all Powers of an Alien 
-**GET**  `https://api-tmoolmuang.c9users.io/api/v1/aliens/id/powers` <br>
+**GET**  `https://api-tm.herokuapp.com/api/v1/aliens/id/powers` <br>
 **header:**  `{ Key: Authorization, Value: Token token=api_token }` <br><br>
 #### Show a single Power of an Alien 
-**GET**  `https://api-tmoolmuang.c9users.io/api/v1/aliens/id/powers/power_id` <br>
+**GET**  `https://api-tm.herokuapp.com/api/v1/aliens/id/powers/power_id` <br>
 **header:**  `{ Key: Authorization, Value: Token token=api_token }` <br><br>
 #### Create a new Power for an existing Alien
-**POST**  `https://api-tmoolmuang.c9users.io/api/v1/aliens/id/powers` <br>
+**POST**  `https://api-tm.herokuapp.com/api/v1/aliens/id/powers` <br>
 **header:**  `{ Key: Authorization, Value: Token token=api_token
   Key: Content-Type, Value: application/json  }` <br>
 **body:**  `{ "ability": "fly" }`<br><br>
 #### Update a Power of an existing Alien
-**PUT**  `https://api-tmoolmuang.c9users.io/api/v1/aliens/id/powers/power_id` <br>
+**PUT**  `https://api-tm.herokuapp.com/api/v1/aliens/id/powers/power_id` <br>
 **header:**  `{ Key: Authorization, Value: Token token=api_token
   Key: Content-Type, Value: application/json  }` <br>
 **body:**  `{ "ability": "invisibility" }`<br><br>
 #### Delete a Power of an Alien
-**DELETE**  `https://api-tmoolmuang.c9users.io/api/v1/aliens/id/powers/power_id` <br>
+**DELETE**  `https://api-tm.herokuapp.com/api/v1/aliens/id/powers/power_id` <br>
 **header:**  `{ Key: Authorization, Value: Token token=api_token }` <br><br>
