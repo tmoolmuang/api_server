@@ -112,6 +112,7 @@ GEM
     pg (0.21.0)
     public_suffix (2.0.5)
     rack (1.6.8)
+    rack-cors (1.0.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.8)
@@ -233,6 +234,7 @@ DEPENDENCIES
   jquery-rails
   letter_opener
   pg
+  rack-cors
   rails (= 4.2.8)
   rails_12factor
   rspec-rails
